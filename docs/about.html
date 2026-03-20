@@ -3,15 +3,44 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About — danabaxia</title>
-  <meta name="description" content="Manufacturing test engineer building AI-assisted validation systems at Enphase Energy.">
+  <title>About — Jingbo Han | Manufacturing Test &amp; Automation Engineer</title>
+  <meta name="description" content="Jingbo Han — Manufacturing test engineer at Enphase Energy specializing in AI-assisted validation, Python test frameworks, embedded systems, and production automation.">
 
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="About — danabaxia">
-  <meta property="og:description" content="Manufacturing test engineer building AI-assisted validation systems at Enphase Energy.">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Jingbo Han — Manufacturing Test & Automation Engineer">
+  <meta property="og:description" content="Building AI-assisted validation systems for battery manufacturing at Enphase Energy.">
   <meta property="og:url" content="https://danabaxia.github.io/about.html">
 
   <link rel="canonical" href="https://danabaxia.github.io/about.html">
+
+  <!-- JSON-LD Person Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jingbo Han",
+    "url": "https://danabaxia.github.io",
+    "jobTitle": "Manufacturing Test Engineer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Enphase Energy"
+    },
+    "knowsAbout": [
+      "Manufacturing Test Automation",
+      "Python",
+      "AI-Assisted Development",
+      "CAN Bus Communication",
+      "State Machine Design",
+      "Embedded Systems Testing",
+      "Data Analysis",
+      "SQL"
+    ],
+    "sameAs": [
+      "https://github.com/danabaxia"
+    ]
+  }
+  </script>
+
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -20,7 +49,7 @@
     <div class="nav-inner">
       <a href="index.html" class="nav-brand">
         <span class="nav-brand-icon">&gt;_</span>
-        danabaxia
+        Jingbo Han
       </a>
       <div class="nav-links">
         <a href="index.html">Blog</a>
@@ -31,31 +60,161 @@
   </nav>
 
   <main class="about-body">
-    <h1>About</h1>
 
-    <p>I'm a manufacturing test engineer at Enphase Energy, working on the IQ Battery R4 production line. My day-to-day involves building and maintaining the test systems that validate every battery unit before it ships.</p>
+    <!-- Identity Header -->
+    <div class="about-header">
+      <div class="about-avatar">JH</div>
+      <div>
+        <h1>Jingbo Han</h1>
+        <p class="about-role">Manufacturing Test &amp; Automation Engineer</p>
+        <p class="about-org">Enphase Energy &mdash; IQ Battery R4</p>
+      </div>
+    </div>
 
-    <p>This blog documents the tools, patterns, and lessons from that work &mdash; particularly at the intersection of AI-assisted development, embedded systems testing, and manufacturing automation.</p>
+    <div class="about-links">
+      <a href="https://github.com/danabaxia" target="_blank" rel="noopener" class="about-link-btn">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        GitHub
+      </a>
+    </div>
 
-    <h2>What I Work On</h2>
-    <ul>
-      <li><strong>Manufacturing test frameworks</strong> &mdash; Python-based systems that orchestrate test sequences, communicate with hardware over CAN bus, and determine pass/fail on the production line</li>
-      <li><strong>AI-assisted validation</strong> &mdash; Using Claude Code as a development partner to build, test, and validate changes without requiring physical hardware</li>
-      <li><strong>Virtual test runners</strong> &mdash; Simulation layers that replicate hardware behavior from golden unit profiles, enabling full test validation on a laptop</li>
-      <li><strong>State machine design</strong> &mdash; Formal models for battery charge/discharge states, transition validation, and per-device tracking</li>
-    </ul>
+    <!-- Intro -->
+    <section class="about-section">
+      <p class="about-lead">I build the systems that decide whether a battery ships or gets pulled off the line.</p>
 
-    <h2>Why This Blog</h2>
-    <p>Manufacturing test engineering doesn't get written about much. The work sits at a unique intersection: you need hardware domain knowledge, software engineering skills, and an understanding of production constraints (throughput, reliability, cost). When AI agents enter this picture, interesting things happen.</p>
+      <p>At Enphase Energy, I design and maintain the manufacturing test infrastructure for the IQ Battery R4 production line. My work spans the full stack of production testing: from Excel-based test requirement documents and Python test frameworks, through CAN bus hardware communication, to real-time yield analysis with SQL.</p>
 
-    <p>I write here to share what works, what doesn't, and what I wish someone had told me.</p>
+      <p>Recently, I've been pioneering the use of <strong>AI agents as development partners</strong> in this space &mdash; building validation systems where Claude Code and an engineer collaborate to validate test changes without requiring physical hardware or lab time.</p>
+    </section>
 
-    <h2>Get in Touch</h2>
-    <p>Find me on <a href="https://github.com/danabaxia" target="_blank" rel="noopener">GitHub</a>.</p>
+    <!-- What I Do -->
+    <section class="about-section">
+      <h2>What I Do</h2>
+
+      <div class="skill-grid">
+        <div class="skill-card">
+          <div class="skill-card__icon" style="color: var(--accent-light);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3>Manufacturing Test Frameworks</h3>
+          <p>Python-based systems that orchestrate multi-step test sequences, communicate with battery hardware over CAN bus, and determine pass/fail decisions on the production line. Every unit tested, every result traceable.</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card__icon" style="color: var(--green);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <h3>AI-Assisted Validation</h3>
+          <p>Built a three-mode validation system where an AI agent and engineer validate manufacturing test changes together &mdash; 124 automated checks, zero hardware required. The AI writes code, runs tests, and iterates on failures in the same session.</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card__icon" style="color: var(--amber);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>Virtual Test Runners</h3>
+          <p>Simulation layers that replicate real hardware behavior from golden unit profiles. 20 hardware-bound methods intercepted, 5-state battery state machine with validated transitions, per-device tracking &mdash; full test validation on a laptop.</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card__icon" style="color: var(--purple);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          </div>
+          <h3>Production Data Analysis</h3>
+          <p>SQL-driven yield analysis, failure Pareto charts, and root cause investigation across multi-site test stations. Turning raw production data into actionable insights &mdash; identifying whether a failure is a unit issue, a fixture issue, or a software issue.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Skills -->
+    <section class="about-section">
+      <h2>Technical Skills</h2>
+      <div class="skill-tags">
+        <div class="skill-tag-group">
+          <span class="skill-tag-label">Languages</span>
+          <span class="tag">Python</span>
+          <span class="tag">SQL</span>
+          <span class="tag">HTML/CSS</span>
+          <span class="tag">Bash</span>
+        </div>
+        <div class="skill-tag-group">
+          <span class="skill-tag-label">Domains</span>
+          <span class="tag">Manufacturing Test</span>
+          <span class="tag">CAN Bus / PCAN</span>
+          <span class="tag">Battery Systems</span>
+          <span class="tag">Embedded Systems</span>
+          <span class="tag">State Machine Design</span>
+        </div>
+        <div class="skill-tag-group">
+          <span class="skill-tag-label">Tools</span>
+          <span class="tag">Claude Code (AI)</span>
+          <span class="tag">Git</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">PyQt5</span>
+          <span class="tag">Mermaid</span>
+        </div>
+        <div class="skill-tag-group">
+          <span class="skill-tag-label">Practices</span>
+          <span class="tag">Test Automation</span>
+          <span class="tag">Yield Analysis</span>
+          <span class="tag">Root Cause Analysis</span>
+          <span class="tag">CI/CD</span>
+          <span class="tag">Technical Writing</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- By the Numbers -->
+    <section class="about-section">
+      <h2>By the Numbers</h2>
+      <div class="about-stats">
+        <div class="about-stat">
+          <div class="about-stat__number">124</div>
+          <div class="about-stat__label">Automated validation checks built</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat__number">0</div>
+          <div class="about-stat__label">Hardware required for validation</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat__number">3</div>
+          <div class="about-stat__label">Validation modes (10s / 30s / 2min)</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat__number">20</div>
+          <div class="about-stat__label">Hardware methods virtualized</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat__number">5</div>
+          <div class="about-stat__label">Battery state machine states</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat__number">~800</div>
+          <div class="about-stat__label">Lines of validation code</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Drives Me -->
+    <section class="about-section">
+      <h2>What Drives Me</h2>
+      <p>Manufacturing test engineering sits at a unique intersection: hardware domain knowledge, software engineering, and production constraints (throughput, reliability, cost). Most of this work happens behind closed doors and never gets written about.</p>
+
+      <p>I believe the next leap in manufacturing test efficiency comes from <strong>AI-assisted development</strong> &mdash; not replacing engineers, but giving them a partner that can write code, run 94 checks in 30 seconds, and iterate on failures without context switching. I'm building that workflow and writing about it here.</p>
+
+      <p>I'm looking for opportunities where I can apply this combination of <strong>hardware-aware software engineering</strong>, <strong>test automation at scale</strong>, and <strong>AI-augmented workflows</strong> to solve hard problems in production, manufacturing, or embedded systems.</p>
+    </section>
+
+    <!-- Contact -->
+    <section class="about-section">
+      <h2>Get in Touch</h2>
+      <p>I'm open to conversations about manufacturing test, AI-assisted engineering, or new opportunities. Find me on <a href="https://github.com/danabaxia" target="_blank" rel="noopener">GitHub</a>.</p>
+    </section>
+
   </main>
 
   <footer aria-label="Site footer">
-    <p>&copy; 2026 danabaxia &middot; <a href="https://github.com/danabaxia" target="_blank" rel="noopener">GitHub</a></p>
+    <p>&copy; 2026 Jingbo Han &middot; <a href="https://github.com/danabaxia" target="_blank" rel="noopener">GitHub</a></p>
   </footer>
 
 </body>
