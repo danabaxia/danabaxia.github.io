@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>About — danabaxia</title>
   <meta name="description" content="Manufacturing test engineer building AI-assisted validation systems at Enphase Energy.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="About — danabaxia">
+  <meta property="og:description" content="Manufacturing test engineer building AI-assisted validation systems at Enphase Energy.">
+  <meta property="og:url" content="https://danabaxia.github.io/about.html">
+
+  <link rel="canonical" href="https://danabaxia.github.io/about.html">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="index.html" class="site-logo">
-        <span class="logo-icon">&gt;_</span>
-        danabaxia.dev
+  <nav aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-brand-icon">&gt;_</span>
+        danabaxia
       </a>
-      <nav class="site-nav">
+      <div class="nav-links">
         <a href="index.html">Blog</a>
-        <a href="about.html" class="active">About</a>
+        <a href="about.html" aria-current="page">About</a>
         <a href="https://github.com/danabaxia" target="_blank" rel="noopener">GitHub</a>
-      </nav>
+      </div>
     </div>
-  </header>
+  </nav>
 
-  <div class="about-content">
+  <main class="about-body">
     <h1>About</h1>
 
     <p>I'm a manufacturing test engineer at Enphase Energy, working on the IQ Battery R4 production line. My day-to-day involves building and maintaining the test systems that validate every battery unit before it ships.</p>
@@ -49,11 +52,10 @@
 
     <h2>Get in Touch</h2>
     <p>Find me on <a href="https://github.com/danabaxia" target="_blank" rel="noopener">GitHub</a>.</p>
-  </div>
+  </main>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <p>&copy; 2026 danabaxia &middot; Built with purpose, not frameworks &middot; <a href="https://github.com/danabaxia" target="_blank" rel="noopener">GitHub</a></p>
+  <footer aria-label="Site footer">
+    <p>&copy; 2026 danabaxia &middot; <a href="https://github.com/danabaxia" target="_blank" rel="noopener">GitHub</a></p>
   </footer>
 
 </body>

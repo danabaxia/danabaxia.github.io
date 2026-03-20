@@ -1,84 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AI-Assisted Manufacturing Test Validation — danabaxia</title>
-  <meta name="description" content="How we built a three-mode validation system that lets an AI agent and a developer validate manufacturing test changes on a laptop.">
+  <meta name="description" content="How we built a three-mode validation system that lets an AI agent and a developer validate manufacturing test changes on a laptop — no hardware, no lab time, no queue.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
   <meta property="og:title" content="AI-Assisted Manufacturing Test Validation">
   <meta property="og:description" content="How we built a three-mode validation system that lets an AI agent and a developer validate manufacturing test changes on a laptop.">
-  <meta property="og:type" content="article">
   <meta property="og:url" content="https://danabaxia.github.io/posts/ai-assisted-manufacturing-test-validation.html">
-  <meta property="article:published_time" content="2026-03-19">
+  <meta property="article:published_time" content="2026-03-19T00:00:00Z">
+  <meta property="article:modified_time" content="2026-03-19T00:00:00Z">
+
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <meta name="twitter:title" content="AI-Assisted Manufacturing Test Validation">
+  <meta name="twitter:description" content="Three-mode validation system for manufacturing tests — no hardware required.">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "AI-Assisted Manufacturing Test Validation",
+    "description": "How we built a three-mode validation system that lets an AI agent and a developer validate manufacturing test changes on a laptop.",
+    "datePublished": "2026-03-19",
+    "dateModified": "2026-03-19",
+    "author": {
+      "@type": "Person",
+      "name": "danabaxia",
+      "url": "https://danabaxia.github.io/about.html"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://danabaxia.github.io/posts/ai-assisted-manufacturing-test-validation.html"
+    }
+  }
+  </script>
+
+  <link rel="canonical" href="https://danabaxia.github.io/posts/ai-assisted-manufacturing-test-validation.html">
   <link rel="stylesheet" href="../css/style.css">
-  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
   <script>
     mermaid.initialize({
       startOnLoad: true,
       theme: 'dark',
       themeVariables: {
         darkMode: true,
-        background: '#1c2128',
-        primaryColor: '#2196F3',
-        primaryTextColor: '#e6edf3',
-        lineColor: '#30363d',
-        secondaryColor: '#161b22',
-        tertiaryColor: '#0d1117'
+        background: '#111827',
+        primaryColor: '#3b82f6',
+        primaryTextColor: '#f1f5f9',
+        lineColor: '#475569',
+        secondaryColor: '#1f2937',
+        tertiaryColor: '#0b0f19'
       }
     });
   </script>
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="../index.html" class="site-logo">
-        <span class="logo-icon">&gt;_</span>
-        danabaxia.dev
+  <nav aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-brand">
+        <span class="nav-brand-icon">&gt;_</span>
+        danabaxia
       </a>
-      <nav class="site-nav">
+      <div class="nav-links">
         <a href="../index.html">Blog</a>
         <a href="../about.html">About</a>
         <a href="https://github.com/danabaxia" target="_blank" rel="noopener">GitHub</a>
-      </nav>
+      </div>
     </div>
-  </header>
+  </nav>
 
-  <!-- Article Header -->
-  <div class="article-header">
-    <div class="post-card-meta">
-      <span class="post-card-date">
-        <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M4.75 0a.75.75 0 0 1 .75.75V2h5V.75a.75.75 0 0 1 1.5 0V2h1.25c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 13.25 16H2.75A1.75 1.75 0 0 1 1 14.25V3.75C1 2.784 1.784 2 2.75 2H4V.75A.75.75 0 0 1 4.75 0ZM2.5 7.5v6.75c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25V7.5Zm10.75-4H2.75a.25.25 0 0 0-.25.25V6h11V3.75a.25.25 0 0 0-.25-.25Z"/></svg>
-        March 19, 2026
-      </span>
-      <span class="meta-dot"></span>
-      <span class="reading-time">
-        <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm7.25-3.25v2.992l2.028 1.014a.75.75 0 0 1-.557 1.392l-2.5-1.25A.75.75 0 0 1 7.25 8.25v-3.5a.75.75 0 0 1 1.5 0Z"/></svg>
-        8 min read
-      </span>
+  <header class="article-hero">
+    <div class="post-card__meta">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M4.75 0a.75.75 0 0 1 .75.75V2h5V.75a.75.75 0 0 1 1.5 0V2h1.25c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 13.25 16H2.75A1.75 1.75 0 0 1 1 14.25V3.75C1 2.784 1.784 2 2.75 2H4V.75A.75.75 0 0 1 4.75 0ZM2.5 7.5v6.75c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25V7.5Zm10.75-4H2.75a.25.25 0 0 0-.25.25V6h11V3.75a.25.25 0 0 0-.25-.25Z"/></svg>
+      <time datetime="2026-03-19">March 19, 2026</time>
+      <span class="post-card__meta-sep"></span>
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm7.25-3.25v2.992l2.028 1.014a.75.75 0 0 1-.557 1.392l-2.5-1.25A.75.75 0 0 1 7.25 8.25v-3.5a.75.75 0 0 1 1.5 0Z"/></svg>
+      <span>8 min read</span>
     </div>
     <h1>AI-Assisted Manufacturing Test Validation</h1>
-    <div class="post-card-tags">
+    <div class="tag-row">
       <span class="tag">manufacturing-test</span>
       <span class="tag">ai-validation</span>
       <span class="tag">virtual-runner</span>
       <span class="tag">state-machine</span>
       <span class="tag">enphase</span>
     </div>
-  </div>
+  </header>
 
-  <!-- Article Body -->
-  <article class="article-body">
+  <article class="article-content">
 
     <a href="../index.html" class="back-link">&larr; Back to all posts</a>
 
-    <div class="callout callout-summary">
-      <div class="callout-title">Summary</div>
+    <div class="callout callout--blue">
+      <div class="callout__label">Summary</div>
       <p>How we built a three-mode validation system that lets an AI agent and a developer validate manufacturing test changes on a laptop &mdash; no hardware, no lab time, no queue.</p>
     </div>
 
@@ -88,8 +108,8 @@
 
     <p>Every change to this pipeline &mdash; a new firmware update step, a modified spec limit, a refactored driver &mdash; carries risk. The traditional validation path requires a physical test station with real hardware: PCAN USB adapters, battery management units, power conversion units, DC supplies, relays. Lab time is scarce. Engineers queue for bench access. A single broken import path discovered at the station wastes hours.</p>
 
-    <div class="callout callout-question">
-      <div class="callout-title">The Core Question</div>
+    <div class="callout callout--amber">
+      <div class="callout__label">The Core Question</div>
       <p>How much of this validation can an AI agent and a developer do together on a laptop, before anything touches a production station?</p>
     </div>
 
@@ -101,13 +121,13 @@
 
     <div class="mermaid">
 graph LR
-    A[Mode 0\nTRD Parse] -->|10s| B[Mode 1\nVirtual Driver]
-    B -->|30s| C[Mode 2\nFramework GUI]
-    C -->|2min| D[Physical\nHardware]
-    style A fill:#4CAF50,color:#fff
-    style B fill:#2196F3,color:#fff
-    style C fill:#FF9800,color:#fff
-    style D fill:#f44336,color:#fff
+    A["Mode 0&lt;br/&gt;TRD Parse"] -->|10s| B["Mode 1&lt;br/&gt;Virtual Driver"]
+    B -->|30s| C["Mode 2&lt;br/&gt;Framework GUI"]
+    C -->|2min| D["Physical&lt;br/&gt;Hardware"]
+    style A fill:#22c55e,color:#fff,stroke:none
+    style B fill:#3b82f6,color:#fff,stroke:none
+    style C fill:#f59e0b,color:#fff,stroke:none
+    style D fill:#ef4444,color:#fff,stroke:none
     </div>
 
     <h3>Mode 0 &mdash; TRD Parse + Logic Validation</h3>
@@ -116,8 +136,8 @@ graph LR
 
     <p>It answers: <em>Can the framework parse this TRD correctly, and are the generated data files logically sound?</em></p>
 
-    <div class="callout callout-tip">
-      <div class="callout-title">What Mode 0 Catches</div>
+    <div class="callout callout--green">
+      <div class="callout__label">What Mode 0 Catches</div>
       <ul>
         <li>Missing or duplicate resource/variable/channel definitions</li>
         <li>Forward references in dependency graphs (step 8 depends on step 12, which hasn't run yet)</li>
@@ -146,8 +166,8 @@ graph LR
       <li><strong>Trigger logging with intent:</strong> <code>set_crequest:+0.300</code> tells you a discharge command was issued at 30% power, not just "some function called"</li>
     </ul>
 
-    <div class="callout callout-important">
-      <div class="callout-title">Sync Contract</div>
+    <div class="callout callout--purple">
+      <div class="callout__label">Sync Contract</div>
       <p>The state machine is the <mark>source of truth</mark>. A legacy string mirror (<code>_virtual_battery_state</code>) stays in sync through a single <code>_sync_battery_state()</code> helper &mdash; one mutation path, no direct writes to the string.</p>
     </div>
 
@@ -155,32 +175,14 @@ graph LR
 
     <table>
       <thead>
-        <tr>
-          <th>Group</th>
-          <th>What it validates</th>
-        </tr>
+        <tr><th>Group</th><th>What it validates</th></tr>
       </thead>
       <tbody>
-        <tr>
-          <td>T1&ndash;T8</td>
-          <td>Config loading, factory pattern, whitelist dispatch, composites, device map, profile structure, ContainerProxy, error handling</td>
-        </tr>
-        <tr>
-          <td>T9a&ndash;T9h</td>
-          <td>State-aware telemetry dispatch, state machine integration, fallback on missing profile keys, repeated same-state no-ops</td>
-        </tr>
-        <tr>
-          <td>T17a&ndash;T17k</td>
-          <td>State machine standalone: enum values match profile keys, legal/illegal transitions, strict mode, history correctness, per-device isolation, reset, global compat</td>
-        </tr>
-        <tr>
-          <td>T18a&ndash;T18e</td>
-          <td>Sync contract: SM and mirror string stay in sync through charge/discharge/idle/shutoff, trigger format verification</td>
-        </tr>
-        <tr>
-          <td>T10&ndash;T16</td>
-          <td>Telemetry limits, color logic, GUI stability, profile switching, transport mode</td>
-        </tr>
+        <tr><td>T1&ndash;T8</td><td>Config loading, factory pattern, whitelist dispatch, composites, device map, profile structure, ContainerProxy, error handling</td></tr>
+        <tr><td>T9a&ndash;T9h</td><td>State-aware telemetry dispatch, state machine integration, fallback on missing profile keys, repeated same-state no-ops</td></tr>
+        <tr><td>T17a&ndash;T17k</td><td>State machine standalone: enum values match profile keys, legal/illegal transitions, strict mode, history correctness, per-device isolation, reset, global compat</td></tr>
+        <tr><td>T18a&ndash;T18e</td><td>Sync contract: SM and mirror string stay in sync through charge/discharge/idle/shutoff, trigger format verification</td></tr>
+        <tr><td>T10&ndash;T16</td><td>Telemetry limits, color logic, GUI stability, profile switching, transport mode</td></tr>
       </tbody>
     </table>
 
@@ -194,23 +196,23 @@ graph LR
 
     <p>The AI agent (Claude Code, running as a CLI tool) participates at every level:</p>
 
-    <div class="callout callout-note">
-      <div class="callout-title">Planning and Architecture</div>
+    <div class="callout callout--blue">
+      <div class="callout__label">Planning and Architecture</div>
       <p>The three-mode design, the state machine transition map, the sync contract rules, the validation check inventory &mdash; all developed through conversation between engineer and AI. The engineer brings domain knowledge (what CAN bus edge cases matter, which framework calls require Qt), the AI brings structure (formal state machines, exhaustive check matrices, phase gating logic).</p>
     </div>
 
-    <div class="callout callout-note">
-      <div class="callout-title">Implementation</div>
+    <div class="callout callout--blue">
+      <div class="callout__label">Implementation</div>
       <p>The AI writes code directly in the codebase &mdash; editing <code>pcan.py</code>, creating <code>state_machine.py</code>, extending <code>validate_system.py</code> with new test groups. It reads existing code before modifying it, runs the validation suite after changes, and iterates on failures.</p>
     </div>
 
-    <div class="callout callout-note">
-      <div class="callout-title">Validation Execution</div>
+    <div class="callout callout--blue">
+      <div class="callout__label">Validation Execution</div>
       <p>The AI runs Mode 0 and Mode 1 validation, reads the full output, and reports results. When a check fails, it can trace the failure to a specific file and line. When a change is proposed, it can predict which checks will be affected.</p>
     </div>
 
-    <div class="callout callout-note">
-      <div class="callout-title">Review and Documentation</div>
+    <div class="callout callout--blue">
+      <div class="callout__label">Review and Documentation</div>
       <p>After code changes, the AI updates the SOP, the project status document, and the CLAUDE.md architecture reference. Every validation run is logged to <code>virtual_runner/logs/</code> with timestamps, durations, and full stdout/stderr capture &mdash; reviewable by both the next engineer and the next AI session.</p>
     </div>
 
@@ -218,15 +220,15 @@ graph LR
 
     <div class="mermaid">
 graph TD
-    A[Engineer describes intent] --> B[AI proposes integration rules]
-    B --> C[Engineer refines rules]
-    C --> D[AI implements code]
-    D --> E[AI runs validation]
+    A["Engineer describes intent"] --> B["AI proposes integration rules"]
+    B --> C["Engineer refines rules"]
+    C --> D["AI implements code"]
+    D --> E["AI runs validation"]
     E -->|FAIL| D
-    E -->|94/94 PASS| F[Engineer reviews diff]
-    F --> G[Engineer adds domain tests]
+    E -->|"94/94 PASS"| F["Engineer reviews diff"]
+    F --> G["Engineer adds domain tests"]
     G --> D
-    F --> H[Update docs, move to next item]
+    F --> H["Update docs, move to next item"]
     </div>
 
     <hr>
@@ -235,8 +237,8 @@ graph TD
 
     <h3>Separate your validation layers</h3>
 
-    <div class="callout callout-success">
-      <div class="callout-title">Key Insight</div>
+    <div class="callout callout--green">
+      <div class="callout__label">Key Insight</div>
       <p>The single most valuable decision was <strong>not</strong> trying to validate everything at one level. Mode 0 catches 80% of TRD issues in 5 seconds. Mode 1 catches driver/state issues in 30 seconds. Mode 2 catches framework integration issues in 2 minutes. Each layer has a clear scope and a clear failure taxonomy.</p>
     </div>
 
@@ -254,8 +256,8 @@ graph TD
 
     <h3>Sync contracts catch desynchronization</h3>
 
-    <div class="callout callout-warning">
-      <div class="callout-title">Anti-Pattern</div>
+    <div class="callout callout--amber">
+      <div class="callout__label">Anti-Pattern</div>
       <p>When you have two representations of the same state, <strong>never</strong> write to both independently. Define a sync contract: one is source of truth, the other is a mirror, and there is exactly one function that updates both.</p>
     </div>
 
@@ -267,8 +269,8 @@ graph TD
 
     <h3>Let the AI run the tests</h3>
 
-    <div class="callout callout-tip">
-      <div class="callout-title">Fastest Feedback Loop</div>
+    <div class="callout callout--green">
+      <div class="callout__label">Fastest Feedback Loop</div>
       <p>The fastest feedback loop is when the AI can run validation immediately after making a change. No context switching, no copy-pasting commands, no waiting for a human to press enter. The validation commands are documented in the SOP, the paths are absolute, and the output is structured. The AI runs 94 checks in 30 seconds and reports the result in the same conversation.</p>
     </div>
 
@@ -278,49 +280,22 @@ graph TD
 
     <table>
       <thead>
-        <tr>
-          <th>Metric</th>
-          <th>Value</th>
-        </tr>
+        <tr><th>Metric</th><th>Value</th></tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Mode 0 checks (TRD validation)</td>
-          <td>30 checks, 4 phases</td>
-        </tr>
-        <tr>
-          <td>Mode 1 checks (driver + state machine)</td>
-          <td>94 checks, 18 test groups</td>
-        </tr>
-        <tr>
-          <td>Projects validated with Mode 0</td>
-          <td>mtt-00986, mtt-01000</td>
-        </tr>
-        <tr>
-          <td>State machine states</td>
-          <td>5 (IDLE, CHARGING, DISCHARGING, SHUTDOWN, ERROR)</td>
-        </tr>
-        <tr>
-          <td>Virtual primitive methods</td>
-          <td>20 (whitelist dispatch)</td>
-        </tr>
-        <tr>
-          <td>Golden profile entries</td>
-          <td>100+ (idle, charge, discharge &times; BMU/PCU &times; 2 nodes)</td>
-        </tr>
-        <tr>
-          <td>Lines of validation code</td>
-          <td>~800 (validate_system.py + validate_trd.py)</td>
-        </tr>
-        <tr>
-          <td>Hardware required</td>
-          <td><mark>None</mark> (all virtual mode)</td>
-        </tr>
+        <tr><td>Mode 0 checks (TRD validation)</td><td>30 checks, 4 phases</td></tr>
+        <tr><td>Mode 1 checks (driver + state machine)</td><td>94 checks, 18 test groups</td></tr>
+        <tr><td>Projects validated with Mode 0</td><td>mtt-00986, mtt-01000</td></tr>
+        <tr><td>State machine states</td><td>5 (IDLE, CHARGING, DISCHARGING, SHUTDOWN, ERROR)</td></tr>
+        <tr><td>Virtual primitive methods</td><td>20 (whitelist dispatch)</td></tr>
+        <tr><td>Golden profile entries</td><td>100+ (idle, charge, discharge &times; BMU/PCU &times; 2 nodes)</td></tr>
+        <tr><td>Lines of validation code</td><td>~800 (validate_system.py + validate_trd.py)</td></tr>
+        <tr><td>Hardware required</td><td><mark>None</mark> (all virtual mode)</td></tr>
       </tbody>
     </table>
 
-    <div class="callout callout-success">
-      <div class="callout-title">Portability</div>
+    <div class="callout callout--green">
+      <div class="callout__label">Portability</div>
       <p>The validation system is portable &mdash; <code>virtual_runner/</code> copies to any project in the mono-repo. Edit one config file (ticket number and TRD filename), run <code>run_validation.bat mode0</code>, and you have a full TRD validation for a new project in under a minute.</p>
     </div>
 
@@ -337,16 +312,15 @@ graph TD
 
     <hr>
 
-    <div class="callout callout-info">
-      <div class="callout-title">About This Post</div>
+    <div class="callout callout--blue">
+      <div class="callout__label">About This Post</div>
       <p>Written March 2026. Project: MTT-00986 / MTT-01000, Enphase Energy IQ Battery R4 manufacturing test platform.</p>
     </div>
 
   </article>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <p>&copy; 2026 danabaxia &middot; Built with purpose, not frameworks &middot; <a href="https://github.com/danabaxia" target="_blank" rel="noopener">GitHub</a></p>
+  <footer aria-label="Site footer">
+    <p>&copy; 2026 danabaxia &middot; <a href="https://github.com/danabaxia" target="_blank" rel="noopener">GitHub</a></p>
   </footer>
 
 </body>
